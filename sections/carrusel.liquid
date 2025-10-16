@@ -1,0 +1,67 @@
+{{ "carrusel.css" | asset_url | stylesheet_tag }}
+
+<div class="logo-gallery-wrapper">
+  {% if section.settings.titulo_carrusel != blank %}
+    <h2 class="carrusel-titulo">{{ section.settings.titulo_carrusel }}</h2>
+  {% endif %}
+  
+  <section class="logo-gallery-container">
+    {% for block in section.blocks %}
+      {%- assign image = block.settings.image -%}
+      {%- assign link = block.settings.link -%}
+
+      {% if image != blank %}
+        <div class="logo-card">
+          <a href="{{ link | default: '#' }}" aria-label="{{ image.alt | default: 'Logo' }}">
+            {{ image | image_url: width: 300 | image_tag: class: 'logo-img', loading: 'lazy', alt: image.alt | default: 'Logo de marca' }}
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Galería de Logos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo_carrusel",
+      "label": "Título de la galería",
+      "default": "Nuestras Marcas"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen del Logo"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Enlace del Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logos",
+      "category": "Custom",
+      "blocks": [
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,236 @@
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 1.5 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 1.5 | round: 0 }}px;
+    }
+  }
+
+
+
+  .novedades__title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-weight: 600 ;
+  }
+
+  .novedades__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .novedades__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .novedades-card {
+    background-color: var(--color-background);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .novedades-card__image-wrapper {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 4 / 3; 
+  }
+
+  .novedades-card__image {
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+  }
+
+  .novedades-card__image-wrapper:hover .novedades-card__image {
+    transform: scale(1.05);
+  }
+
+  .novedades-card__content {
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1; 
+
+  .novedades-card__title {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .novedades-card__link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+  }
+
+  .novedades__view-all-wrapper {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .novedades__view-all-link {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+  }
+{%- endstyle -%}
+
+<article class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    {%- if section.settings.title != blank -%}
+      <h2 class="novedades__title title">{{ section.settings.title | escape }}</h2>
+    {%- endif -%}
+
+    <div class="novedades__grid">
+      {%- for block in section.blocks -%}
+        <div class="novedades-card" {{ block.shopify_attributes }}>
+          <a href="{{ block.settings.link | default: '#' }}" class="novedades-card__image-wrapper">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 800 | image_tag:
+                loading: 'lazy',
+                class: 'novedades-card__image',
+                widths: '400, 600, 800'
+              }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </a>
+          <div class="novedades-card__content">
+            {%- if block.settings.card_title != blank -%}
+              <h3 class="novedades-card__title">{{ block.settings.card_title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.link_text != blank and block.settings.link != blank -%}
+              <a href="{{ block.settings.link }}" class="novedades-card__link">
+                {{ block.settings.link_text | escape }} &rsaquo;
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.view_all_link != blank and section.settings.view_all_text != blank -%}
+      <div class="novedades__view-all-wrapper">
+        <a href="{{ section.settings.view_all_link }}" class="novedades__view-all-link">
+          {{ section.settings.view_all_text | escape }} &rsaquo;
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Sección de Novedades",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título de la sección",
+      "default": "NOVEDADES"
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "Texto del enlace 'Ver más'",
+      "default": "Ver más"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "Enlace 'Ver más'"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de colores",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Márgenes de la sección"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margen superior",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margen inferior",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "novedad",
+      "name": "Novedad",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Título de la tarjeta",
+          "default": "Título de la novedad"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Texto del enlace",
+          "default": "Leer ahora"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Enlace"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sección de Novedades",
+      "blocks": [
+        { "type": "novedad" },
+        { "type": "novedad" },
+        { "type": "novedad" }
+      ]
+    }
+  ]
+}
+{% endschema %}
