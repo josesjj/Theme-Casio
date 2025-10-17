@@ -15,124 +15,315 @@
         "slide-0": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/BANNER_DESKTOP_60Calcu-01_1804x644_aff45963-3538-47c3-bf5e-4fb5594dcdac.webp",
+            "image_overlay_opacity": 0,
+            "heading": "",
             "heading_size": "h1",
             "subheading": "",
+            "button_label": "",
             "link": "shopify://collections",
             "button_style_secondary": false,
-            "box_align": "middle-right",
             "show_text_box": false,
+            "box_align": "middle-right",
             "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_WR8ERj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_VZLA_MOBILE_JBALVIN_2800_x_1000_px_1804x644_87ccac84-18a8-4266-9a7a-1a6a2577425b.webp",
             "image_overlay_opacity": 0,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
           }
         }
       },
       "block_order": [
-        "slide-0"
+        "slide-0",
+        "slide_WR8ERj"
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "small",
+        "slide_height": "adapt_image",
         "slider_visual": "dots",
-        "auto_rotate": false,
+        "auto_rotate": true,
         "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true
+        "image_behavior": "ambient",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
     "all-products": {
       "type": "featured-collection",
       "settings": {
+        "collection": "all",
+        "products_to_show": 5,
+        "title": "<strong>LO NUEVO</strong>",
         "heading_size": "h2",
+        "description": "",
         "show_description": true,
         "description_style": "subtitle",
-        "collection": "all",
-        "products_to_show": 24,
-        "columns_desktop": 6,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
+        "columns_desktop": 5,
         "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
         "padding_top": 24,
         "padding_bottom": 24
       }
     },
-    "collection-list": {
-      "type": "collection-list",
+    "carrusel_BKegep": {
+      "type": "carrusel",
       "blocks": {
-        "collection-0": {
-          "type": "featured_collection",
+        "logo_ADeCCT": {
+          "type": "logo",
           "settings": {
-            "collection": ""
+            "image": "shopify://shop_images/Logos_Web_Casio_Store_Mesa_de_trabajo_1_160x160_101e6381-1e40-4ec8-b1bd-89bc9cc1e381.avif",
+            "link": "shopify://collections/all"
           }
         },
-        "collection-1": {
-          "type": "featured_collection",
+        "logo_haGaWY": {
+          "type": "logo",
           "settings": {
-            "collection": ""
+            "image": "shopify://shop_images/Logos_Web_Casio_Store-02_160x160_b3982856-60d4-4e94-8c76-54f87dae6326.avif",
+            "link": "shopify://collections/frontpage"
           }
         },
-        "collection-2": {
-          "type": "featured_collection",
+        "logo_CHdCRa": {
+          "type": "logo",
           "settings": {
-            "collection": ""
+            "image": "shopify://shop_images/Logos_Web_Casio_Store-03_160x160_66b5476b-2727-42ea-80d2-d406f230c215.avif",
+            "link": "shopify://collections"
           }
         },
-        "collection-3": {
-          "type": "featured_collection",
+        "logo_JwkqzX": {
+          "type": "logo",
           "settings": {
-            "collection": ""
+            "image": "shopify://shop_images/56456.avif",
+            "link": "shopify://collections"
+          }
+        },
+        "logo_Abfhq6": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Logos_Web_Casio_Store-04_160x160_c4e79b11-7c1e-47f2-91c3-ad9c318f8697.avif",
+            "link": "shopify://collections/lo-nuevo"
+          }
+        },
+        "logo_KpcFqK": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Logos_Web_Casio_Store-08_160x160_271aacc7-ffef-4703-bfd0-feeac578b4d8.avif",
+            "link": "shopify://collections"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "collection-1",
-        "collection-2",
-        "collection-3"
+        "logo_ADeCCT",
+        "logo_haGaWY",
+        "logo_CHdCRa",
+        "logo_JwkqzX",
+        "logo_Abfhq6",
+        "logo_KpcFqK"
       ],
+      "name": "Logos",
       "settings": {
-        "heading_size": "h2",
-        "image_ratio": "square",
-        "columns_desktop": 4,
+        "titulo_carrusel": ""
+      }
+    },
+    "seccionimagens_3CHb43": {
+      "type": "seccionimagens",
+      "blocks": {
+        "image_item_GBJKbq": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/1_323x323_2ded5281-e56a-46be-8dc0-af39bad53933.webp",
+            "title": "G-Shock",
+            "link": "shopify://products/casio-4"
+          }
+        },
+        "image_item_YVbPP9": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/2_323x323_3ad2a640-c1c2-4fbc-a5b0-ab574f6b7e43.webp",
+            "title": "Vintage",
+            "link": "shopify://collections"
+          }
+        },
+        "image_item_GjkBQD": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/3_323x323_d39bf8ba-4482-45c3-9b9c-70d1d61cbd39.webp",
+            "title": "Baby-G",
+            "link": "shopify://products/casio-2"
+          }
+        },
+        "image_item_Vq6pKx": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/4_323x323_187fbe4d-c040-430b-a943-b27459e96615.webp",
+            "title": "Teclados",
+            "link": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "image_item_GBJKbq",
+        "image_item_YVbPP9",
+        "image_item_GjkBQD",
+        "image_item_Vq6pKx"
+      ],
+      "name": "Imágenes Promocionales",
+      "settings": {
+        "title": "",
         "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "image-banner": {
-      "type": "image-banner",
+    "featured_collection_q3xVKU": {
+      "type": "featured-collection",
       "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "small",
-        "desktop_content_position": "top-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
+        "collection": "all",
+        "products_to_show": 5,
+        "title": "<strong>LO MAS VENDIDO</strong>",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": true,
+        "description_style": "subtitle",
+        "columns_desktop": 5,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 24,
+        "padding_bottom": 0
+      }
+    },
+    "comentarios_MYktnH": {
+      "type": "comentarios",
+      "blocks": {
+        "testimonial_RB7zTV": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "<p>El tiempo de entrega del reloj a través de su sitio online fue relativamente rápido y el producto de mucha utilidad. Recomiendo la compra.</p>",
+            "author": "Luis P"
+          }
+        },
+        "testimonial_4aWVBR": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "<p>El tiempo de entrega del reloj a través de su sitio online fue relativamente rápido y el producto de mucha utilidad. Recomiendo la compra.</p>",
+            "author": "Luis P"
+          }
+        },
+        "testimonial_gzzri4": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "<p>El tiempo de entrega del reloj a través de su sitio online fue relativamente rápido y el producto de mucha utilidad. Recomiendo la compra.</p>",
+            "author": "Luis P"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_RB7zTV",
+        "testimonial_4aWVBR",
+        "testimonial_gzzri4"
+      ],
+      "name": "Sección de Comentarios",
+      "settings": {
+        "title": "LA GENTE COMENTA",
         "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "novedades_pjnddi": {
+      "type": "novedades",
+      "blocks": {
+        "novedad_NRd6K8": {
+          "type": "novedad",
+          "settings": {
+            "image": "shopify://shop_images/novedad3.webp",
+            "card_title": "Calculator 60th Anniversary",
+            "link_text": "Leer ahora",
+            "link": "shopify://collections"
+          }
+        },
+        "novedad_6m7hdq": {
+          "type": "novedad",
+          "settings": {
+            "image": "shopify://shop_images/novedad2.webp",
+            "card_title": "G-SHOCK x J Balvin",
+            "link_text": "Leer ahora",
+            "link": "shopify://products/casio"
+          }
+        },
+        "novedad_JGeLMy": {
+          "type": "novedad",
+          "settings": {
+            "image": "shopify://shop_images/novedad1.webp",
+            "card_title": "Una recreación de la edición limitada del Casiotron: para celebrar los 50 años de su creación",
+            "link_text": "Leer ahora",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "novedad_NRd6K8",
+        "novedad_6m7hdq",
+        "novedad_JGeLMy"
+      ],
+      "name": "Sección de Novedades",
+      "settings": {
+        "title": "NOVEDADES",
+        "view_all_text": "Ver más",
+        "view_all_link": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "hero-slideshow",
     "all-products",
-    "collection-list",
-    "image-banner"
+    "carrusel_BKegep",
+    "seccionimagens_3CHb43",
+    "featured_collection_q3xVKU",
+    "comentarios_MYktnH",
+    "novedades_pjnddi"
   ]
 }
